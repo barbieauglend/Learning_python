@@ -6,7 +6,7 @@ def progressbar(it, size=10):
 
     def _show(_i):
         x = int(size * _i / count)
-        sys.stdout.write("[%s%s] %i %s\r" % ("#" * x, "." * (size - x), _i, '%'))
+        sys.stdout.write("[%s%s] %i %s\r" % ("#" * x, " " * (size - x), _i, '%'))
         sys.stdout.flush()
 
     _show(0)
