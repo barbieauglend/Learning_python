@@ -18,9 +18,9 @@ x = input_first
 sys.stdout.write("%s %i" % ('Output', x))
 sys.stdout.write("\n")
 
-true = True
+rechnen = True
 
-while true:
+while rechnen:
     input_op  = raw_input("Input: ")
     op_raw = str(input_op)
     op_raw.split()
