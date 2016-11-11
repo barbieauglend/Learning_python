@@ -1,16 +1,20 @@
-import time
 import sys
+import time
 
-def ladebalken():
-    steps = 10
-    for i in range(100):
-        time.sleep(0.1)
-        if i % steps == 0:
-            print '\b#',
-            sys.stdout.flush()
-    print '\b] 100 %',
+def progressbar(it, size=10):
+    count = len(it)
 
-print '[          ]',
-print '\b'*12,
-sys.stdout.flush()
-ladebalken()
+    def _show(_i):
+        x = int(size * _i / count)
+        sys.stdout.write("[%s%s] %i %s\r" % ("#" * x, "." * (size - x), _i, '%'))
+        sys.stdout.flush()
+
+    _show(0)
+    for i, item in enumerate(it):
+        yield item
+        _show(i + 1)
+    sys.stdout.write("\n")
+    sys.stdout.flush()
+
+for i in progressbar(range(100), 10):
+    time.sleep(0.1)
