@@ -27,7 +27,7 @@ while rechnen:
         x = input_first
 
     elif input_op == "close":
-        exit()
+        rechnen = False
 
     else:
         op_raw = str(input_op)
