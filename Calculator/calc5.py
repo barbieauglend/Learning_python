@@ -18,9 +18,9 @@ x = input_first
 sys.stdout.write("%s %i" % ('Output', x))
 sys.stdout.write("\n")
 
-true = True
+rechnen = True
 
-while true:
+while rechnen:
     input_op  = raw_input("Input: ")
     if input_op == "clear":
         input_first = input("Input: ")
