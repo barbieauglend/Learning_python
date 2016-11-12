@@ -12,10 +12,11 @@ def multiply(x, y):
 def divide(x, y):
    return x / y
 
-input_first  = input("First number: ")
+input_first = input("First number: ")
 x = int(input_first)
 
-input_op  = raw_input("Op: ")
+# input_op = raw_input("Op: ") # python 2.7
+input_op = input("Op: ") #python 3.5
 op = str(input_op)
 
 input_second = input("Second number: ")

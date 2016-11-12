@@ -13,7 +13,8 @@ def divide(x, y):
    return x / y
 
 input_first = input("Input: ")
-x = input_first
+# x = input_first #python 2.7
+x = eval(input_first) #python 3.5
 
 sys.stdout.write("%s %i" % ('Output', x))
 sys.stdout.write("\n")
@@ -21,10 +22,13 @@ sys.stdout.write("\n")
 rechnen = True
 
 while rechnen:
-    input_op  = raw_input("Input: ")
+#    input_op = raw_input("Input: ") #python 2.7
+    input_op = input("Input: ")  # python 3.5
     if input_op == "clear":
         input_first = input("Input: ")
-        x = input_first
+#        x = input_first #python 2.7
+        x = eval(input_first)  # python 3.5
+
 
     elif input_op == "close":
         rechnen = False
