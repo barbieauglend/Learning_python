@@ -7,7 +7,6 @@ def getpswd():
     return pswd
 
 def startmenu():
-#    print(" 1. Kochrezepte \n 2. Weltherrschaft \n 3. Uhrzeit \n Q. Beenden")
     user_choice = input(" 1. Kochrezepte \n 2. Weltherrschaft \n 3. Uhrzeit \n Q. Beenden \n Your choice: ")
     return user_choice
 
@@ -28,7 +27,7 @@ while pswd != "superhacker":
 user_choice = startmenu()
 online = True
 
-while online == True:
+while online:
     if user_choice == "1":
         print("Kochrezepte aus der ganzen Welt! \n www.chefkoch.de")
         user_choice = startmenu()
@@ -44,6 +43,7 @@ while online == True:
     elif user_choice == "Q":
         print("Bye =)")
         online = False
+
     else:
         print("Something went wrong! What do you want me to do?")
         user_choice = startmenu()
