@@ -1,3 +1,5 @@
+#python 2.7 and python 3.5
+
 from random import shuffle
 
 example = open("GPL.txt").read().split()
