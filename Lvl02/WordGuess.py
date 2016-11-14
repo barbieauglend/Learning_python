@@ -25,9 +25,12 @@ while playing:
             print (hidden_word)
             if gamer_input not in word:
                 tries -= 1
+                print('Wrong! You have ', tries, 'more tries/try.')
                 if tries == 0:
                     print('Game Over!')
                     playing = False
+            else:
+                print('Good job!')
             if word == hidden_word:
                 print('You won!')
                 break
