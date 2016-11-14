@@ -7,6 +7,10 @@ word = getpass.getpass('Word: ')
 tries = 3
 guessed_letters = []
 playing = True
+hidden_word = word
+for letter in word[1:len(word)-1]:
+    hidden_word = hidden_word.replace(letter, ' __ ')
+print (hidden_word)
 
 while playing:
 
@@ -19,7 +23,7 @@ while playing:
     elif len(gamer_input) == 1 and gamer_input in 'qwertzuiopasdfghjklyxcvbnm':
         if gamer_input not in guessed_letters:
             guessed_letters.append(gamer_input)
-            for letter in word:
+            for letter in word[1:len(word)-1]:
                 if letter not in guessed_letters:
                     hidden_word = hidden_word.replace(letter, ' __ ')
             print (hidden_word)
