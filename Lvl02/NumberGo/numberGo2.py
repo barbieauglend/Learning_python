@@ -3,7 +3,20 @@
 import getpass
 import random
 
-nr = int(random.randint(1,10))
+
+option = 0
+
+while option not in range(1,3):
+    option = int(input('1. Singleplayer \n2. Multiplayer: \nYou Option: '))
+
+if option == 1:
+    nr = int(random.randint(1, 10))
+
+elif option == 2:
+    nr = 0
+    while nr not in range(1,10):
+        number = getpass.getpass('Nr Player One: ')
+        nr = int(number)
 
 tries = 3
 guessed_numbers = []
