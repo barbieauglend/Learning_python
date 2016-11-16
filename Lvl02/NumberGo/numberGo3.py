@@ -3,6 +3,9 @@
 import getpass
 import random
 
+def highscore_manager(int won, int lost, String name):
+
+
 repeat = True
 lost = 0
 won = 0
