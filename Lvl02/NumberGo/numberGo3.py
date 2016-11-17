@@ -3,12 +3,32 @@
 import getpass
 import random
 
-def highscore_manager(int won, int lost, String name):
 
+def highscore_manager():
+    re_scores = open("highscore.txt", "r").read().split(',')
+    score = int(str(re_scores[1]))
+    name = str(re_scores[0])
+    if won > score:
+        wr_scores = open("highscore.txt", "w")
+        name_new = input('New Highscore! Type your name: ')
+        new_score = name_new + ' , ' + str(won)
+        wr_scores.write(str(new_score))
+        wr_scores.close()
+
+    repeat_option = 0
+    while repeat_option not in range(1, 3):
+        repeat_option = int(input('Do you want to play again?\n1. Yes\n2. No\n Your Option: '))
+    if repeat_option == 2:
+        repeat = False
+
+    return name, score
 
 repeat = True
 lost = 0
 won = 0
+
+score = highscore_manager()
+highscore = print('The actual highscore is from ', score)
 
 while repeat:
 
@@ -46,6 +66,7 @@ while repeat:
                     print('Game Over!')
                     playing = False
                     lost += 1
+                    highscore_manager()
                 elif gamer_input < nr:
                     print('Not really! The Number you are searching for is bigger than ', gamer_input)
                 elif gamer_input > nr:
@@ -57,14 +78,13 @@ while repeat:
             print('You won!')
             won += 1
             playing = False
+            highscore_manager()
         print('You have won ', won, ' times and lost ', lost, 'times.')
-
 
 repeat_option = 0
 while repeat_option not in range(1, 3):
     repeat_option = int(input('Do you want to play again?\n1. Yes\n2. No\n Your Option: '))
     if repeat_option == 2:
         repeat = False
-
 
 exit()
