@@ -51,8 +51,7 @@ def L():
 def E():
     global current_token
 
-    if current_token == 'num':
-        getNextToken()
+    if current_token == 'num=num':
         getNextToken()
         return
 
@@ -74,7 +73,7 @@ def getNextToken():
 
 
 
-tokens = ['if', 'then', 'else', 'begin', 'print', 'end', ';', 'num']
+tokens = ['if', 'then', 'else', 'begin', 'print', 'end', ';', 'num=num']
 user_input = list(input('Type your expression: ').split())
 i = 0
 current_token = user_input[i]
