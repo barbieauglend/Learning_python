@@ -4,7 +4,7 @@ import socket
 sniffer = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_ICMP)
 
 # Bind to localhost
-sniffer.bind(('0.0.0.0', 0))
+sniffer.bind(('192.168.178.0', 0))
 
 # IP header Check
 sniffer.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1)
